@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Feed.css">
+    <link rel="stylesheet" href="Post.css">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
             <img class="logo_header" src="../assets/Logo Instadev.png" alt="Logo">
             <form method="POST" action="">
                 <label for="pesquisa"></label>
-                <input class="pesquisar_header" type="text" name="pesquisa" placeholder='pesquisar'>
+                <input class="pesquisar_header" type="text" name="pesquisa" placeholder='Pesquisar'>
             </form>
             <nav class="nav">
                 <a class="icones_nav" href="#"><i class="fas fa-house-user"></i></a>
@@ -28,5 +30,107 @@
             </nav>
         </div>
     </header>
+
+    <main>
+        <div class="container container_stories">
+            <div class="stories">
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+                <div class="perfil_storie">
+                    <img src="../assets/tio doni.jpeg" alt="Foto storie">
+                    <span>Tio doni</span>
+                </div>
+            </div>
+            <div class="link_perfil">
+                <img src="../assets/Saitama.webp" alt="foto Perfil">
+                <div class="nome_perfil_feed">
+                    <span class="nick">yes_saitama</span>
+                    <span class="nome">Um Soco Man</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container_postar">
+            <div class="Postar">
+                <div class="Perfil_postar">
+                    <img class="Perfil_postar" src="../assets/Saitama.webp" alt="foto Perfil">
+                    <span>Postar</span>
+                </div>
+
+                <form class="form_postar" action="" method="post">
+                    <div class="campo_postar">
+                        <label for="descricao"></label>
+                        <input class="descricao" type="text" name="descricao"
+                            placeholder="Digite a descrição da imagem">
+                    </div>
+                    <div class="campo_postar upar_imagem">
+                        <label class="Postarfoto" for="Postarfoto">Escolher Imagem</label>
+                        <input class="enviar_imagem" type="file" id="Postarfoto">
+                    </div>
+                    <button class="botao_postar" type="submit">Postar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container container_post">
+            <div class="post">
+                <div class="perfil_post">
+                    <img src="../assets/Billy perfil.png" alt="Billy perfil">
+                    <div class="nome_localizacao">
+                        <span class="nome_post">Billy bola pepino pintor</span>
+                        <span class="localizacao">São Paulo, SP</span>
+                    </div>
+                </div>
+                <div class="foto_postada">
+                    <img src="../assets/Billy.png" alt="Foto Billy">
+                </div>
+                <div>
+                    <div class="curtir_comentar">
+                        <a href="#" class="icones_comentarios"><i class="far fa-heart"></i></a>
+                        <a href="#" class="icones_comentarios"><i class="far fa-comment"></i></a>
+                        <form action="" method="post">
+                            <label for=""></label>
+                            <input class="comentar" type="text" placeholder="Comentar">
+                        </form>
+                    </div>
+                    <div class="comentario">
+                        <span class="autor_comentario">Gabriel Jesus</span>
+                        <span class="comentado">Iae billy cola aqui em casa</span>
+                    </div>
+                    <div class="comentario">
+                        <span class="autor_comentario">Gabriel Jesus</span>
+                        <span class="comentado">Iae billy cola aqui em casa</span>
+                    </div>
+                    <div class="comentario">
+                        <span class="autor_comentario">Gabriel Jesus</span>
+                        <span class="comentado">Iae billy cola aqui em casa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

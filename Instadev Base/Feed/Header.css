@@ -11,6 +11,7 @@ body{
 
 header{
     background-color: white;
+    margin-bottom: 40px;
 }
 
 .container{
@@ -26,14 +27,14 @@ header{
 }
 
 .logo_header {
-    width: 160px;
-    height: 45px;
+    width: 145px;
+    height: 35px;
 
 }
 
 .pesquisar_header{
     border: 1px solid gainsboro;
-    width: 175px;
+    width: 240px;
     height: 30px;
     text-align: center;
     background-color: #f8f8f8;
@@ -47,7 +48,7 @@ header{
 }
 
 .icones_nav {
-    font-size: 30px;
+    font-size: 25px;
     color: black;
 }
 
