@@ -5,10 +5,21 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 body{
     background: #E5E5E5;
 }
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    font-style: normal;
+}
+
 .bio{
     display: flex;
     width:100%;
@@ -30,13 +41,49 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 310px;
+    width: 385px;
     height: 80%;
 }
 
 .info{
     display: flex;
     justify-content: space-between;
+}
+
+.info a{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    font-family: 'Segoe UI';
+    text-decoration: none;
+    color: #2686CC;
+}
+
+.info p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+.publi{
+    display: flex; 
+    width: 500px;
+}
+
+.publi p{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
 }
 
 .conteudoPerfil{
@@ -123,6 +170,11 @@ hr{
 
 .comentarios p{
     width: 75%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    font-style: normal;
 }
 
 .curtidas{
@@ -135,6 +187,11 @@ hr{
 
 .curtidas p{
     width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 17px;
+    font-family: 'Segoe UI';
 }
 
 .boxComentarios{
@@ -142,6 +199,14 @@ hr{
     flex-direction: column;
     height: 135px;
     justify-content: space-evenly;
+}
+
+.boxComentarios span{
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 17px;
+    font-family: 'Segoe UI';
 }
 
 .UserPost{
@@ -158,8 +223,25 @@ hr{
     justify-content: space-between;
 }
 
+.NomeLocal p{
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
 .curtidas div{
     display: flex;
     justify-content: space-between;
     width: 80%
+}
+
+.RestoComments{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #909090;
 }
