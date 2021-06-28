@@ -26,7 +26,7 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 210px;
+    height: 235px;
 }
 
 .bio img{
@@ -42,7 +42,7 @@ h1{
     flex-direction: column;
     justify-content: space-between;
     width: 385px;
-    height: 80%;
+    height: 173px;
 }
 
 .info{
@@ -275,4 +275,23 @@ hr{
     width: 100%;
     align-items: center;
     margin-top: 101px;
+}
+
+.EditarPerfil{
+    border-radius: 5px;
+    border: 2px solid #2686CC;
+    
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2686CC;
+}
+
+.EditarPerfil a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
 }
