@@ -12,6 +12,8 @@ body{
 header{
     background-color: white;
     margin-bottom: 40px;
+    position: fixed;
+    width:  100%;
 }
 
 .container{
