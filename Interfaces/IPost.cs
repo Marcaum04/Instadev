@@ -7,7 +7,7 @@ namespace Instadev.Interfaces
     {
          void CadastrarPost(Post p);
          List<Post> ListarPosts();
-         void DeletarPost(Post p);
+         void DeletarPost(int id);
          void EditarPost(Post p);
     }
 }
