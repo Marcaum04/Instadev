@@ -6,8 +6,8 @@ namespace Instadev.Interfaces
     public interface IUsuario
     {
          void CadastrarUsuario(Usuario u);
-         void DeletarUsuario (Usuario u);
-         void EditarUsuario(int Id);
+         void DeletarUsuario (int i);
+         void EditarUsuario(Usuario u);
          List<Usuario> ListarUsuarios();
     }
 }
