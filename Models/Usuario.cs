@@ -17,7 +17,7 @@ namespace Instadev.Models
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
         private bool Logado { get; set; }
-        public const string CAMINHO = "Database/Usuario";
+        public const string CAMINHO = "Database/Usuario.csv";
         public Usuario()
         {
             CriarPastaEArquivo(CAMINHO);
@@ -31,7 +31,7 @@ namespace Instadev.Models
 
         public void DeletarUsuario(int Id)
         {
-            List<string> JogadorDeletar = LerTodasLinhasCSV();
+            List<string> JogadorDeletar = LerTodasLinhasCSV(CAMINHO);
             JogadorDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
             ReescreverCSV(CAMINHO, JogadorDeletar);
         }
@@ -61,6 +61,7 @@ namespace Instadev.Models
                 user.Id = int.Parse(linha[6]);
                 user.ImagemPerfil = linha[7];
             }
+            return usuarios;
         }
         public string PrepararLinhas(Usuario u)
         {
