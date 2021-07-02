@@ -65,6 +65,7 @@ namespace Instadev.Models
             }
             return usuarios;
         }
+
         public string PrepararLinhas(Usuario u)
         {
             return $"{u.Nome};{u.Email};{u.Senha};{u.NomeUsuario};{u.NumSeguidores};{u.NumSeguindo};{u.Id};{u.ImagemPerfil}";
