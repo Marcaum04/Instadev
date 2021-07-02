@@ -6,14 +6,14 @@ namespace Instadev.Models
 {
     public class Usuario : InstadevBase, IUsuario
     {
-        private string Nome { get; set; }
-        private string Email { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
         private string Senha { get; set; }
-        private string NomeUsuario { get; set; }
-        private int NumSeguidores { get; set; }
+        public string NomeUsuario { get; set; }
+        public int NumSeguidores { get; set; }
         public int NumSeguindo { get; set; }
-        private int Id { get; set; }
-        private string ImagemPerfil { get; set; }
+        public int Id { get; set; }
+        public string ImagemPerfil { get; set; }
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
         private bool Logado { get; set; }
@@ -53,11 +53,11 @@ namespace Instadev.Models
             {
                 string[] linha = item.Split(";");
                 user.Nome = linha[0];
-                user.Email = linha[1];
-                user.Senha = linha[2];
-                user.NomeUsuario = linha[3];
-                user.NumSeguidores = int.Parse(linha[4]);
-                user.NumSeguindo = int.Parse(linha[5]);
+                // user.Email = linha[1];
+                // user.Senha = linha[2];
+                // user.NomeUsuario = linha[3];
+                // user.NumSeguidores = int.Parse(linha[4]);
+                // user.NumSeguindo = int.Parse(linha[5]);
                 user.Id = int.Parse(linha[6]);
                 user.ImagemPerfil = linha[7];
             }
@@ -66,6 +66,10 @@ namespace Instadev.Models
         public string PrepararLinhas(Usuario u)
         {
             return $"{u.Nome};{u.Email};{u.Senha};{u.NomeUsuario};{u.NumSeguidores};{u.NumSeguindo};{u.Id};{u.ImagemPerfil}";
+        }
+
+        public void SetarSenha(string Senha_){
+            Senha = Senha_;
         }
     }
 }
