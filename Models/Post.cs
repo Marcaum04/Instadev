@@ -7,11 +7,11 @@ namespace Instadev.Models
 {
     public class Post : InstadevBase, IPost
     {
-        private int IdAutor { get; set; }
-        private int IdPost { get; set; }
-        private string Texto { get; set; }
-        private int Curtidas { get; set; }
-        private string imagem { get; set; }
+        public int IdAutor { get; set; }
+        public int IdPost { get; set; }
+        public string Texto { get; set; }
+        public int Curtidas { get; set; }
+        public string imagem { get; set; }
         private const string CAMINHO = "Database/Post.csv";
         
         public Post()
@@ -60,7 +60,7 @@ namespace Instadev.Models
             return posts;
         }
 
-        private string PrepararLinha(Post p){
+        public string PrepararLinha(Post p){
             return $"{p.IdAutor};{p.IdPost};{p.imagem};{p.Curtidas};{p.Texto}";
         }
     }

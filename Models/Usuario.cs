@@ -12,7 +12,7 @@ namespace Instadev.Models
         private string NomeUsuario { get; set; }
         private int NumSeguidores { get; set; }
         public int NumSeguindo { get; set; }
-        private int Id { get; set; }
+        public int Id { get; set; }
         private string ImagemPerfil { get; set; }
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
@@ -31,9 +31,9 @@ namespace Instadev.Models
 
         public void DeletarUsuario(int Id)
         {
-            List<string> JogadorDeletar = LerTodasLinhasCSV(CAMINHO);
-            JogadorDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
-            ReescreverCSV(CAMINHO, JogadorDeletar);
+            List<string> UsuarioDeletar = LerTodasLinhasCSV(CAMINHO);
+            UsuarioDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
+            ReescreverCSV(CAMINHO, UsuarioDeletar);
         }
 
         public void EditarUsuario(Usuario u)
