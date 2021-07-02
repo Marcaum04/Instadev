@@ -31,9 +31,9 @@ namespace Instadev.Models
 
         public void DeletarUsuario(int Id)
         {
-            List<string> JogadorDeletar = LerTodasLinhasCSV(CAMINHO);
-            JogadorDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
-            ReescreverCSV(CAMINHO, JogadorDeletar);
+            List<string> UsuarioDeletar = LerTodasLinhasCSV(CAMINHO);
+            UsuarioDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
+            ReescreverCSV(CAMINHO, UsuarioDeletar);
         }
 
         public void EditarUsuario(Usuario u)
