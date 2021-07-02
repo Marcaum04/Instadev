@@ -5,11 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Instadev.Controllers
 {
+    [Route("Perfil")]
     public class PerfilController : Controller
     {
 
         Post publicacao = new Post();
         Usuario user = new Usuario();
+
+        [Route("{id}")]
         public IActionResult Index(int id)
         {
             List<Post> publi = publicacao.ListarPosts();
