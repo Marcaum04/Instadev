@@ -17,7 +17,7 @@ namespace Instadev.Models
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
         private bool Logado { get; set; }
-        public const string CAMINHO = "Database/Usuario.csv";
+        public const string CAMINHO = "Database/Usuario";
         public Usuario()
         {
             CriarPastaEArquivo(CAMINHO);
@@ -60,9 +60,12 @@ namespace Instadev.Models
                 // user.NumSeguindo = int.Parse(linha[5]);
                 user.Id = int.Parse(linha[6]);
                 user.ImagemPerfil = linha[7];
+
+                usuarios.Add(user);
             }
             return usuarios;
         }
+
         public string PrepararLinhas(Usuario u)
         {
             return $"{u.Nome};{u.Email};{u.Senha};{u.NomeUsuario};{u.NumSeguidores};{u.NumSeguindo};{u.Id};{u.ImagemPerfil}";

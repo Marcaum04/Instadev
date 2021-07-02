@@ -60,7 +60,7 @@ namespace Instadev.Models
             return posts;
         }
 
-        private string PrepararLinha(Post p){
+        public string PrepararLinha(Post p){
             return $"{p.IdAutor};{p.IdPost};{p.imagem};{p.Curtidas};{p.Texto}";
         }
     }
