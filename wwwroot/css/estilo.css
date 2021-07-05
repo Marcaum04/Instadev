@@ -141,3 +141,12 @@ main {
 .apps-store {
     text-decoration: none;
 }
+
+.erro{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    color: #fc1e8b;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
