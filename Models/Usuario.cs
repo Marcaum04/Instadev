@@ -14,6 +14,12 @@ namespace Instadev.Models
         public int NumSeguindo { get; set; }
         public int Id { get; set; }
         public string ImagemPerfil { get; set; }
+
+        internal object Split(string v)
+        {
+            throw new System.NotImplementedException();
+        }
+
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
         private bool Logado { get; set; }
