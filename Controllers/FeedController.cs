@@ -1,7 +1,15 @@
+using System.Collections.Generic;
+using Instadev.Models;
+using Microsoft.AspNetCore.Mvc;
+
 namespace Instadev.Controllers
 {
-    public class FeedController
+    [Route("Feed")]
+    public class FeedController : Controller
     {
-        
+        public IActionResult Index(int id)
+        {
+            return View();
+        }
     }
 }
