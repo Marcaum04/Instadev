@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Instadev.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Instadev.Controllers
@@ -16,14 +17,14 @@ namespace Instadev.Controllers
         }
 
         [Route("Cadastrar")]
-        public IActionResult Cadastrar()
+        public IActionResult Cadastrar(IFormCollection form)
         {
             Usuario NovoUsuario = new Usuario();
-            NovoUsuario.Nome = form[];
-            NovoUsuario.Email = form[];
-            NovoUsuario.SetarSenha(form[]);
-            NovoUsuario.NomeUsuario(form[]);
-            NovoUsuario.Id = Int32.Parse(form[]);
+            NovoUsuario.Nome = form["NomeCompleto"];
+            NovoUsuario.Email = form["E-Mail"];
+            NovoUsuario.SetarSenha(form["Senha"]);
+            NovoUsuario.NomeUsuario = (form["NomeUsuario"]);
+            NovoUsuario.Id = 1;
 
               if(form.Files.Count > 0)
             {

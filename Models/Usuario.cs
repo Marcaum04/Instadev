@@ -53,13 +53,11 @@ namespace Instadev.Models
             {
                 string[] linha = item.Split(";");
                 user.Nome = linha[0];
-                //user.Email = linha[1];
-                //user.Senha = linha[2];
-                //user.NomeUsuario = linha[3];
-                //user.NumSeguidores = int.Parse(linha[4]);
-                //user.NumSeguindo = int.Parse(linha[5]);
-                user.Id = int.Parse(linha[6]);
-                user.ImagemPerfil = linha[7];
+                user.Email = linha[1];
+                user.Senha = linha[2];
+                user.NomeUsuario = linha[3];
+                user.Id = int.Parse(linha[4]);
+                user.ImagemPerfil = linha[5];
 
                 usuarios.Add(user);
             }
