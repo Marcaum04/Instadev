@@ -4,21 +4,21 @@
 
 
 <head>
-    <title>Login</title>
+    <title>@ViewData["Title"]</title>
 </head>
 
-<div class="menu-cadastro">
-    <h1 class="logo">Instadev</h1>
-    <div class="conteudo-cadastro">
-        <form class="campo-texo" method="POST" action='@Url.Action("Logar")'>
+<div class="menu-cadastro1">
+    <img class="logo" src="~/Images/Logo.png" alt="">
+    <div class="conteudo-cadastro1">
+        <form class="campo-texo1" method="POST" action='@Url.Action("Logar")'>
             <div>
-                <input type="text" class="preencher" placeholder="E-Mail" name="Email">
+                <input type="text" required="required" class="preencher" placeholder="   E-Mail" name="Email">
             </div>
             <div>
-                <input type="password" class="preencher" placeholder="Senha" name="Senha">
+                <input type="password" required="required" class="preencher" placeholder="   Senha" name="Senha">
             </div>
-            <div class="box-cadastre-se">
-                <button type="submit" class="cadastre-se">Entrar</button>
+            <div class="box-cadastre-se1">
+                <button type="submit" class="cadastre-se1">Entrar</button>
             </div>
         </form>
 
@@ -27,24 +27,24 @@
             <p>OU</p>
             <div></div>
         </div>
-        <a href="#" class="link_cadastro">Esqueceu a senha ?</a>
+        <a href="#" class="link_cadastro1">Esqueceu a senha ?</a>
 
     </div>
 </div>
-<div class="outro">
-    <p class="tem-conta">
+<div class="outro1">
+    <p class="tem-conta1">
         Não tem uma conta?
-        <a href="#" class="conecte-se">Cadastre-se</a>
+        <a asp-area="" asp-controller="Cadastro" asp-action="Index" class="conecte-se1">Cadastre-se</a>
     </p>
 </div>
-<div class="obtenha-app">
+<div class="obtenha-app1">
     <p>Obtenha o aplicativo.</p>
 </div>
 <div>
-    <a href="#" class="apps-store">
-        <img width="133" height="39" src="assets/app-store.png" alt="appstore.icostore">
+    <a href="#" class="apps-store1">
+        <img width="133" height="39" src="~/Images/appstore.png" alt="appstore.icostore">
     </a>
-    <a href="#" class="apps-store">
-        <img width="133" height="39" src="assets/google-play.png" alt="googleplay.icostore">
+    <a href="#" class="apps-store1">
+        <img width="133" height="39" src="~/Images/googleplay.png" alt="googleplay.icostore">
     </a>
 </div>
