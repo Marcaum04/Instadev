@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Instadev.Models;
 using Microsoft.AspNetCore.Http;
@@ -24,33 +25,51 @@ namespace Instadev.Controllers
             NovoUsuario.Email = form["E-Mail"];
             NovoUsuario.SetarSenha(form["Senha"]);
             NovoUsuario.NomeUsuario = (form["NomeUsuario"]);
-            NovoUsuario.Id = 1;
 
-              if(form.Files.Count > 0)
+            List<Usuario> Listagem = UsuarioModel.ListarUsuarios();
+            List<int> ListaIDs = new List<int>();
+
+            foreach (Usuario item in Listagem)
+            {
+                ListaIDs.Add(item.Id);
+            }
+            
+            int idUser;
+
+            do
+            {
+                Random randNum = new Random();
+                idUser = randNum.Next(0, 9999);
+            } while (ListaIDs.FindAll(x => x == idUser) == null);
+
+            NovoUsuario.Id = idUser;
+
+            if (form.Files.Count > 0)
             {
                 var file = form.Files[0];
                 var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Usuarios");
 
-                if(!Directory.Exists(folder)){
+                if (!Directory.Exists(folder))
+                {
                     Directory.CreateDirectory(folder);
                 }
-                
+
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
-                using (var stream = new FileStream(path, FileMode.Create))  
-                {  
-                    file.CopyTo(stream);  
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
                 }
-                NovoUsuario.ImagemPerfil = file.FileName;                
+                NovoUsuario.ImagemPerfil = file.FileName;
             }
             else
             {
                 NovoUsuario.ImagemPerfil = "padrao.png";
             }
 
-            UsuarioModel.CadastrarUsuario(NovoUsuario);            
+            UsuarioModel.CadastrarUsuario(NovoUsuario);
             ViewBag.Usuarios = UsuarioModel.ListarUsuarios();
 
-             return LocalRedirect("~/Cadastro");
+            return LocalRedirect("~/Cadastro");
         }
     }
 }
