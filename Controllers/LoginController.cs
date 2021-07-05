@@ -18,7 +18,7 @@ namespace Instadev.Controllers
         [Route("Logar")]
         public IActionResult Logar(IFormCollection form)
         {
-            List<string> lista = LoginUsuario.LerTodasLinhasCSV("Database/Usuario");
+            List<string> lista = LoginUsuario.LerTodasLinhasCSV("Database/Usuario.csv");
             string logado = lista.Find(x => x.Split(";")[1] == form["Email"] && x.Split(";")[2] == form["Senha"]);
 
             if (logado != null)
@@ -33,7 +33,7 @@ namespace Instadev.Controllers
         [Route("Logout")]
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("_Username");
+            HttpContext.Session.Remove("_Id");
             return LocalRedirect("~/");
         }
     }
