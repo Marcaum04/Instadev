@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Instadev.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Instadev.Controllers
@@ -12,9 +13,9 @@ namespace Instadev.Controllers
         Post publicacao = new Post();
         Usuario user = new Usuario();
 
-        [Route("{id}")]
-        public IActionResult Index(int id)
+        public IActionResult Index()
         {
+            int id = int.Parse(HttpContext.Session.GetString("_Id"));
             List<Post> publi = publicacao.ListarPosts();
             List<Post> postagens = publi.FindAll(x => x.IdAutor == id);
 
