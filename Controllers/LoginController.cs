@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Instadev.Controllers
 {
-
-    [Route("Login")]
     public class LoginController : Controller
     {
         [TempData]
@@ -17,6 +15,7 @@ namespace Instadev.Controllers
             return View();
         }
 
+        [Route("Logar")]
         public IActionResult Logar(IFormCollection form)
         {
             List<string> lista = LoginUsuario.LerTodasLinhasCSV("Database/Usuario");
@@ -24,18 +23,18 @@ namespace Instadev.Controllers
 
             if (logado != null)
             {
-                HttpContext.Session.SetString("_Id", logado.Split(";")[6]);
+                HttpContext.Session.SetString("_Id", logado.Split(";")[4]);
                 return LocalRedirect("~/Feed");
             }
             Mensagem = "Dados incorretos, tente novamente...";
-            return LocalRedirect("~/Login");
+            return LocalRedirect("~/");
         }
 
         [Route("Logout")]
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("_Username");
-            return LocalRedirect("~/Login");
+            return LocalRedirect("~/");
         }
     }
 }

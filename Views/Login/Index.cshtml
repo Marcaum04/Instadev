@@ -2,16 +2,11 @@
 @{
     ViewData["Title"] = "Login";
 }
-
-
-<head>
-    <title>@ViewData["Title"]</title>
-</head>
-
 <div class="menu-cadastro1">
     <img class="logo" src="~/Images/Logo.png" alt="">
     <div class="conteudo-cadastro1">
-        <form class="campo-texo1" method="POST" action='@Url.Action("Logar")'>
+
+        <form enctype="multipart/form-data" class="campo-texo1" method="POST" action='@Url.Action("Logar")'>
             <div>
                 <input type="text" required="required" class="preencher" placeholder="   E-Mail" name="Email">
             </div>
