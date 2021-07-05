@@ -4,25 +4,25 @@
     }
 
 <div class="menu-cadastro">
-            <label class="logo">Instadev</label>
+            <img class="logo" src="~/Images/Logo.png" alt="">
             <div class="conteudo-cadastro">
                 <h2 class="subtitulo">Cadastre-se para ver fotos e vídeos dos seus amigos.</h2>
                 <p>&nbsp;</p>
-                <form class="campo-texo"  action='@Url.Action("Cadastrar")'>
+                <form class="campo-texo"  method="POST" action='@Url.Action("Cadastrar")'>
                     <div>
-                        <input type="text" class="preencher" placeholder="  E-Mail" name="E-Mail">
+                        <input type="text" required="required" class="preencher" placeholder="  E-Mail" name="E-Mail">
                     </div>
                     <div>
-                        <input type="text" class="preencher" placeholder="  Nome Completo" name="NomeCompleto">
+                        <input type="text" required="required" class="preencher" placeholder="  Nome Completo" name="NomeCompleto">
                     </div>
                     <div>
-                        <input type="text" class="preencher" placeholder="  Nome de Usuário" name="NomeUsuario" >
+                        <input type="text" required="required" class="preencher" placeholder="  Nome de Usuário" name="NomeUsuario" >
                     </div>
                     <div>
-                        <input type="password" class="preencher" placeholder="  Senha" name="Senha" >
+                        <input type="password" required="required" class="preencher" placeholder="  Senha" name="Senha" >
                     </div>
                 <div class="box-cadastre-se">
-                    <button type="submit" href="#" class="cadastre-se">Cadastre-se</a>
+                    <button type="submit" class="cadastre-se">Cadastre-se</a>
                 </div>
                 </form>
                 <p>&nbsp;</p>
@@ -42,9 +42,9 @@
         </div>
         <div>
             <a href="#" class="apps-store">
-                <img width="133" height="39" src="~/ww=" alt="appstore.icostore">
+                <img width="133" height="39" src="~/Images/appstore.png" alt="appstore.icostore">
             </a>
             <a href="#" class="apps-store">
-                <img width="133" height="39" src="~/wwroot/Images/googleplay.png" alt="googleplay.icostore">
+                <img width="133" height="39" src="~/Images/googleplay.png" alt="googleplay.icostore">
             </a>
         </div>
