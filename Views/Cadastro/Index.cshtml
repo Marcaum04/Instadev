@@ -8,7 +8,8 @@
             <div class="conteudo-cadastro">
                 <h2 class="subtitulo">Cadastre-se para ver fotos e vídeos dos seus amigos.</h2>
                 <p>&nbsp;</p>
-                <form class="campo-texo"  method="POST" action='@Url.Action("Cadastrar")'>
+
+                <form enctype="multipart/form-data" class="campo-texo"  method="POST" action='@Url.Action("Cadastrar")'>
                     <div>
                         <input type="text" required="required" class="preencher" placeholder="  E-Mail" name="E-Mail">
                     </div>
