@@ -23,7 +23,7 @@ namespace Instadev.Models
         List<Usuario> ListaUsers = new List<Usuario>();
         List<int> id = new List<int>();
         private bool Logado { get; set; }
-        public const string CAMINHO = "Database/Usuario";
+        public const string CAMINHO = "Database/Usuario.csv";
         public Usuario()
         {
             CriarPastaEArquivo(CAMINHO);
