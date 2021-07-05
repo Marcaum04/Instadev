@@ -1,9 +1,50 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <a class="navbar-brand" asp-area="" asp-controller="Cadastro" asp-action="Index">Cadastro</a>
+
+<head>
+    <title>Login</title>
+</head>
+
+<div class="menu-cadastro">
+    <h1 class="logo">Instadev</h1>
+    <div class="conteudo-cadastro">
+        <form class="campo-texo" method="POST" action='@Url.Action("Logar")'>
+            <div>
+                <input type="text" class="preencher" placeholder="E-Mail" name="Email">
+            </div>
+            <div>
+                <input type="password" class="preencher" placeholder="Senha" name="Senha">
+            </div>
+            <div class="box-cadastre-se">
+                <button type="submit" class="cadastre-se">Entrar</button>
+            </div>
+        </form>
+
+        <div class="linha_ou">
+            <div></div>
+            <p>OU</p>
+            <div></div>
+        </div>
+        <a href="#" class="link_cadastro">Esqueceu a senha ?</a>
+
+    </div>
+</div>
+<div class="outro">
+    <p class="tem-conta">
+        Não tem uma conta?
+        <a href="#" class="conecte-se">Cadastre-se</a>
+    </p>
+</div>
+<div class="obtenha-app">
+    <p>Obtenha o aplicativo.</p>
+</div>
+<div>
+    <a href="#" class="apps-store">
+        <img width="133" height="39" src="assets/app-store.png" alt="appstore.icostore">
+    </a>
+    <a href="#" class="apps-store">
+        <img width="133" height="39" src="assets/google-play.png" alt="googleplay.icostore">
+    </a>
 </div>
