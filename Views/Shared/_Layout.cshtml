@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/css/Feed.css" />
     <link rel="stylesheet" href="~/css/Post.css" />
+    <link rel="stylesheet" href="~/css/EditarPerfil.css" />
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
@@ -40,6 +41,10 @@
                 else if(@ViewData["Title"].ToString() == "Perfil"){
                     <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.Perfil.ImagemPerfil" alt="Perfil"></a>
                 }
+                else if(@ViewData["Title"].ToString() == "Editar_Perfil"){
+                    <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioEditar.ImagemPerfil" alt="Perfil"></a>
+                }
+                
             </nav>
         </div>
     </header>
