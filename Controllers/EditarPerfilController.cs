@@ -63,6 +63,7 @@ namespace Instadev.Controllers
                 {
                     file.CopyTo(stream);
                 }
+                HttpContext.Session.SetString("Imagem", file.FileName);
                 usuarioEditado.ImagemPerfil = file.FileName;
             }
             else
