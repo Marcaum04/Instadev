@@ -17,8 +17,10 @@ namespace Instadev.Controllers
             List<Usuario> lista = UsuarioFeed.ListarUsuarios();
             int id = int.Parse(HttpContext.Session.GetString("_Id"));
             Usuario Logado = lista.Find(x => x.Id == id);
+
             ViewBag.UsuarioLogado = Logado;
             ViewBag.Stories = UsuarioFeed.ListarUsuarios();
+            ViewBag.Posts = PostFeed.ListarPosts();
             return View();
         }
 
@@ -32,6 +34,8 @@ namespace Instadev.Controllers
             NovoPost.Texto = form["Descricao"];
 
             NovoPost.IdAutor = int.Parse(HttpContext.Session.GetString("_Id"));
+            NovoPost.NomeAutor = HttpContext.Session.GetString("Nome");
+            NovoPost.ImagemAutor = HttpContext.Session.GetString("Imagem");
 
             foreach (Post item in Listagem)
             {
@@ -51,7 +55,7 @@ namespace Instadev.Controllers
             {
 
                 var file = form.Files[0];
-                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Post");
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Posts");
 
                 if (!Directory.Exists(folder))
                 {

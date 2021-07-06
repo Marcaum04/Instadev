@@ -7,6 +7,8 @@ namespace Instadev.Models
 {
     public class Post : InstadevBase, IPost
     {
+        public string NomeAutor{ get; set; }
+        public string ImagemAutor{ get; set; }
         public int IdAutor { get; set; }
         public int IdPost { get; set; }
         public string Texto { get; set; }
@@ -48,11 +50,13 @@ namespace Instadev.Models
                 string[] linha = item.Split(";");
                 Post NovoPost = new Post();
 
-                NovoPost.IdAutor = Int32.Parse(linha[0]);
-                NovoPost.IdPost = Int32.Parse(linha[1]);
-                NovoPost.imagem = linha[2];
-                NovoPost.Curtidas = Int32.Parse(linha[3]);
-                NovoPost.Texto = linha[4];
+                NovoPost.NomeAutor = linha[0];
+                NovoPost.ImagemAutor = linha[1];
+                NovoPost.IdPost = Int32.Parse(linha[2]);
+                NovoPost.imagem = linha[3];
+                NovoPost.Curtidas = Int32.Parse(linha[4]);
+                NovoPost.Texto = linha[5];
+                NovoPost.IdAutor = Int32.Parse(linha[6]);
 
                 posts.Add(NovoPost);
             }
@@ -61,7 +65,7 @@ namespace Instadev.Models
         }
 
         public string PrepararLinha(Post p){
-            return $"{p.IdAutor};{p.IdPost};{p.imagem};{p.Curtidas};{p.Texto}";
+            return $"{p.NomeAutor};{p.ImagemAutor};{p.IdPost};{p.imagem};{p.Curtidas};{p.Texto};{p.IdAutor}";
         }
     }
 }
