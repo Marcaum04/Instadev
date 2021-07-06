@@ -41,6 +41,11 @@
                 else if(@ViewData["Title"].ToString() == "Perfil"){
                     <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.Perfil.ImagemPerfil" alt="Perfil"></a>
                 }
+                else if(@ViewData["Title"].ToString() == "Editar_Perfil"){
+                    <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioEditar.ImagemPerfil" alt="Perfil"></a>
+                }
+                
+
             </nav>
         </div>
     </header>
