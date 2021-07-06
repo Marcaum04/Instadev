@@ -53,10 +53,11 @@ namespace Instadev.Models
         {
             List<Usuario> usuarios = new List<Usuario>();
             string[] linhas = File.ReadAllLines(CAMINHO);
-            Usuario user = new Usuario();
 
             foreach (var item in linhas)
             {
+                Usuario user = new Usuario();
+                
                 string[] linha = item.Split(";");
                 user.Nome = linha[0];
                 user.Email = linha[1];
