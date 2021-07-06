@@ -24,21 +24,34 @@ namespace Instadev.Controllers
 
         [Route("EditandoTeste")]
         public IActionResult Editando(IFormCollection form){
+
             string caminho = "Database/Usuario.csv";
             int id = int.Parse(HttpContext.Session.GetString("_Id"));
             List<Usuario> userLines = UsuarioEdit.ListarUsuarios();
             List<string> linhas = UsuarioEdit.LerTodasLinhasCSV(caminho);
 
             Usuario usuarioEditado = userLines.Find(x => x.Id == id);
+            string Nome = form["NomeEditado"];
+            string User = form["NomeUsuarioEditado"];
+            string Email = form["EmailEditado"];
+            if (Nome != null)
+            {
+                usuarioEditado.Nome = Nome;
+            }
 
-            usuarioEditado.Nome = form["NomeEditado"];
-            usuarioEditado.NomeUsuario = form["NomeUsuarioEditado"];
-            usuarioEditado.Email = form["EmailEditado"];
-            
+            if (User != null)
+            {
+                usuarioEditado.NomeUsuario = User;
+            }
+            if (Email != null)
+            {
+                usuarioEditado.Email = Email;
+            }
+        
             if (form.Files.Count > 0)
             {
                 var file = form.Files[0];
-                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/equipes");
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Usuarios");
 
                 if (!Directory.Exists(folder))
                 {
