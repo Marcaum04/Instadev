@@ -44,27 +44,7 @@ namespace Instadev.Controllers
 
             NovoUsuario.Id = idUser;
 
-            if (form.Files.Count > 0)
-            {
-                var file = form.Files[0];
-                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Usuarios");
-
-                if (!Directory.Exists(folder))
-                {
-                    Directory.CreateDirectory(folder);
-                }
-
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
-                using (var stream = new FileStream(path, FileMode.Create))
-                {
-                    file.CopyTo(stream);
-                }
-                NovoUsuario.ImagemPerfil = file.FileName;
-            }
-            else
-            {
-                NovoUsuario.ImagemPerfil = "padrao.png";
-            }
+            NovoUsuario.ImagemPerfil = "padrao.png";
 
             UsuarioModel.CadastrarUsuario(NovoUsuario);
             ViewBag.Usuarios = UsuarioModel.ListarUsuarios();
