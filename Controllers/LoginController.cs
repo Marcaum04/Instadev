@@ -33,7 +33,7 @@ namespace Instadev.Controllers
         [Route("Logout")]
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("_Id");
+            HttpContext.Session.Remove("_Username");
             return LocalRedirect("~/");
         }
     }
