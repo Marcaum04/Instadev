@@ -24,7 +24,7 @@
     {
     <header>
        <div class="container container_header">
-            <img class="logo_header" src="~/Images/Logo.png" alt="Logo">
+            <a asp-area="" asp-controller="Feed"><img class="logo_header" src="~/Images/Logo.png" alt="Logo"></a>
             <form method="POST" action="">
                 <label for="pesquisa"></label>
                 <input class="pesquisar_header" type="text" name="pesquisa" placeholder='Pesquisar'>
@@ -36,13 +36,13 @@
                 <a class="icones_nav" href="#"><i class="far fa-heart"></i></a>
                 @if (@ViewData["Title"].ToString() == "Feed")
                 {
-                    <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioLogado.ImagemPerfil" alt="Perfil"></a>
+                    <a asp-area="" asp-controller="Perfil"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioLogado.ImagemPerfil" alt="Perfil"></a>
                 }
                 else if(@ViewData["Title"].ToString() == "Perfil"){
-                    <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.Perfil.ImagemPerfil" alt="Perfil"></a>
+                    <a asp-area="" asp-controller="Perfil"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.Perfil.ImagemPerfil" alt="Perfil"></a>
                 }
                 else if(@ViewData["Title"].ToString() == "Editar_Perfil"){
-                    <a href="#"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioEditar.ImagemPerfil" alt="Perfil"></a>
+                    <a asp-area="" asp-controller="Perfil"><img class="imagem_perfil" src="~/img/Usuarios/@ViewBag.UsuarioEditar.ImagemPerfil" alt="Perfil"></a>
                 }
                 
             </nav>
