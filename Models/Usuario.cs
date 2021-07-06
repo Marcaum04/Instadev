@@ -38,14 +38,14 @@ namespace Instadev.Models
         public void DeletarUsuario(int Id)
         {
             List<string> UsuarioDeletar = LerTodasLinhasCSV(CAMINHO);
-            UsuarioDeletar.RemoveAll(x => x.Split(";")[6] == Id.ToString());
+            UsuarioDeletar.RemoveAll(x => x.Split(";")[4] == Id.ToString());
             ReescreverCSV(CAMINHO, UsuarioDeletar);
         }
 
         public void EditarUsuario(Usuario u)
         {
             List<string> linhas = LerTodasLinhasCSV(CAMINHO);
-            linhas.RemoveAll(x => x.Split(";")[6] == u.Id.ToString());
+            linhas.RemoveAll(x => x.Split(";")[4] == u.Id.ToString());
             linhas.Add(PrepararLinhas(u));
             ReescreverCSV(CAMINHO, linhas);
         }

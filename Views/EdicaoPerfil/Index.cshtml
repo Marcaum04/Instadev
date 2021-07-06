@@ -1,0 +1,78 @@
+@model Usuario
+    @{
+        ViewData["Title"] = "Editar Perfil";
+    }
+
+    <div class="perfil_editar">
+
+            <div class="Aba_lateral">
+                <div>
+                    <div class="hr"></div>
+                    <span>Editar Perfil</span>
+                </div>
+            </div>
+
+            <div class="editar_perfil">
+
+                <form enctype="multipart/form-data" method="POST" action='@Url.Action("Editando")'>
+
+                    <div class="imagem_editar">
+                        <div class="mini_perfil">
+                            <img src="~/img/Usuarios/@ViewBag.UsuarioEditar.ImagemPerfil" alt="Foto do perfil">
+                            <div class="Pearson">
+                                <span>@ViewBag.UsuarioEditar.NomeUsuario</span>
+                                <input class="editar_imagem" type="file" name="Imagem" for="Imagem_Editar">Alterar foto do perfil</label>
+                            </div>
+                            
+                        </div>
+                        <input type="file" id="Imagem_Editar">
+                    </div>
+
+                    <div class="campo_editar">
+                        <div class="testeEdit">
+                            <label for="">Nome</label>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" placeholder="@ViewBag.UsuarioEditar.Nome" name="NomeEditado">
+                            <p>Ajude as pessoas a descobrir sua conta usando o nome pelo qual você é conhecido: seu nome
+                                completo, apelido ou nome comercial.</p>
+                            <p>Você pode alterar o seu nome apenas duas vezes a cada 14 dias.</p>
+                        </div>
+                    </div>
+                    <div class="campo_editar">
+                        <div class="testeEdit">
+                            <label for="">Nome de usuário </label>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" placeholder="@ViewBag.UsuarioEditar.NomeUsuario" name="NomeUsuarioEditado">
+                            <p>Na maioria dos casos, você poderá alterar seu nome de usuário novamente para
+                                nascimento_tr por mais 14 dias.</p>
+                            <span class="info_pessoal">Informações pessoais</span>
+                            <p>Forneça suas informações pessoais, mesmo se a conta for usada para uma empresa, um animal
+                                de estimação ou outra coisa. Elas não farão parte do seu perfil público.</p>
+                        </div>
+                    </div>
+                    <div class="campo_editar">
+                        <div class="testeEdit">
+                            <label for="">Email </label>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" placeholder="@ViewBag.UsuarioEditar.Email" name="EmailEditado">
+                        </div>
+                    </div>
+
+                    <div class="enviar_deletar campo_editar">
+                        <div class="teste1">
+                            
+                        </div>
+                        <div class="buttonForm inputs">
+                            <button class="enviar_editar" type="submit">Enviar</button>
+                            <a href="">Desativar minha conta definitivamente</a>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
