@@ -11,19 +11,21 @@ namespace Instadev.Controllers
     public class EdicaoPerfilController : Controller
     {
         Usuario UsuarioEdit = new Usuario();
+        Post PostEdit = new Post();
 
         [Route("Testando")]
         public IActionResult Index()
-        {   
+        {
             List<Usuario> lista = UsuarioEdit.ListarUsuarios();
             int id = int.Parse(HttpContext.Session.GetString("_Id"));
             Usuario LogadoEdit = lista.Find(x => x.Id == id);
-            ViewBag.UsuarioEditar = LogadoEdit; 
+            ViewBag.UsuarioEditar = LogadoEdit;
             return View();
         }
 
         [Route("EditandoTeste")]
-        public IActionResult Editando(IFormCollection form){
+        public IActionResult Editando(IFormCollection form)
+        {
 
             string caminho = "Database/Usuario.csv";
             int id = int.Parse(HttpContext.Session.GetString("_Id"));
@@ -47,7 +49,7 @@ namespace Instadev.Controllers
             {
                 usuarioEditado.Email = Email;
             }
-        
+
             if (form.Files.Count > 0)
             {
                 var file = form.Files[0];
@@ -65,6 +67,22 @@ namespace Instadev.Controllers
                 }
                 HttpContext.Session.SetString("Imagem", file.FileName);
                 usuarioEditado.ImagemPerfil = file.FileName;
+
+                List<string> Postagens = PostEdit.LerTodasLinhasCSV("Database/Post.csv");
+                List<string> PostagensUser = Postagens.FindAll(x => x.Split(";")[6] == id.ToString());
+                foreach (var item in PostagensUser)
+                {
+                    item.Split(";")[0] = form["NomeEditado"];
+                    item.Split(";")[1] = file.FileName;
+                }
+
+                Postagens.RemoveAll(x => x.Split(";")[6] == id.ToString());
+                
+                foreach (var item in PostagensUser)
+                {
+                    Postagens.Add(item);
+                }
+                PostEdit.ReescreverCSV("Database/Post.csv", Postagens);
             }
             else
             {
@@ -73,7 +91,16 @@ namespace Instadev.Controllers
 
             UsuarioEdit.EditarUsuario(usuarioEditado);
 
+
+
+
             return LocalRedirect("~/Perfil");
+        }
+        public IActionResult Desativar()
+        {
+            int id = int.Parse(HttpContext.Session.GetString("_Id"));
+            UsuarioEdit.DeletarUsuario(id);
+            return LocalRedirect("~/Login");
         }
     }
 }

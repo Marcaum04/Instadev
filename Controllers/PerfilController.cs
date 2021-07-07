@@ -27,5 +27,13 @@ namespace Instadev.Controllers
             
             return View();
         }
+
+        [Route("Deslogar")]
+        public IActionResult Deslogar(){
+            HttpContext.Session.Remove("_Id");
+            HttpContext.Session.Remove("Nome");
+            HttpContext.Session.Remove("Imagem");
+            return LocalRedirect("~/Login");
+        }
     }
 }
