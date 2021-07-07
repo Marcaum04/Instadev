@@ -55,6 +55,7 @@ main {
 }
 
 .preencher {
+    text-indent: 8px;
     width: 267px;
     height: 35px;
     background: #FAFAFA;
